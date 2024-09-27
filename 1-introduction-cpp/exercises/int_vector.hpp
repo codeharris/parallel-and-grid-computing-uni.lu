@@ -1,3 +1,5 @@
+
+
 class IntVector {
   /* The number of elements currently in the array (as stored by the user). */
   size_t n;

@@ -12,16 +12,45 @@ class IntVector {
 public:
 
   /* Default constructor */
+
+  IntVector(): n(0), cap(0), values(nullptr){
+    std::cout << "Default constructor called" << std::endl;
+  }
+
+
   /* Copy constructor */
+
+  IntVector(const IntVector& other): n(other.n), cap(other.cap), values(other.values) {
+    
+    std::cout << "Copy constructor called" << std::endl;
+  }
+
+
+
   /* Destructor */
 
   /* allocate an array of size `n` filled with 0. */
-  IntVector(size_t n);
+  IntVector(size_t n): n(n), cap(n) {
+    values = new int[cap]();
 
-  size_t capacity() const;
-  size_t size() const;
+  };
 
-  void resize(size_t n);
+//return current capacity
+  size_t capacity() const{
+    return cap;
+  };
+
+//return current size
+  size_t size() const{
+    return n;  
+  };
+
+  void resize(size_t n){
+
+  };
+
+
+
   void reserve(size_t n);
 
   /* Add the value `v` at the back of the vector, reallocating if necessary. */
